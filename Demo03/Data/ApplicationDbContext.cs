@@ -11,10 +11,10 @@ namespace Demo.Data
 {
     internal class ApplicationDbContext : DbContext
     {
-       // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         
 
-       //=>     optionsBuilder.UseLazyLoadingProxies().UseSqlServer("Server = .; Database = ApplicationCompany; Trusted_Connection = true ; TrustServerCertificate = true; Encrypt=true");
+       =>     optionsBuilder.UseLazyLoadingProxies().UseSqlServer("Server = .; Database = ApplicationCompany; Trusted_Connection = true ; TrustServerCertificate = true; Encrypt=true");
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

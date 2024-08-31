@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//using System.Runtime.CompilerServices;
-//[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
+using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
 namespace Demo.Models
 {

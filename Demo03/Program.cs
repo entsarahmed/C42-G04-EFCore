@@ -1,5 +1,6 @@
 ﻿using Demo.Data;
 using Demo.Data.Migrations;
+using Demo.Models;
 using Demo03.Data;
 
 namespace Demo03
@@ -175,7 +176,43 @@ namespace Demo03
 
             #endregion
 
+            ///                             make inner join   
+            #region LINQ - Join Operators [Join() - GroupJoin()]//Make join then Grouping
 
+            #region Inner Join
+            //var Result = from D in dbContext.Departments
+            //             join E in dbContext.Employees
+            //             on D.Id equals E.DepartmentId
+            //             select new
+            //             {
+
+            //                 EmployeeId = E.Id,
+            //                 EmployeeName = E.Name,
+            //                 DepartmentId = D.Id,
+            //                 DepartmentName = D.Name,
+
+
+            //             };
+
+            //Result =dbContext.Departments.Join(dbContext.Employees,
+            //    D => D.Id,
+            //    E => E.DepartmentId,
+            //    (D, E) => new
+            //    {
+            //        EmployeeId = E.Id,
+            //        EmployeeName = E.Name,
+            //        DepartmentId = D.Id,
+            //        DepartmentName = D.Name,
+
+            //    });
+
+            //foreach ( var item in Result )
+            //    Console.WriteLine($"Employee { item.EmployeeName},Department: {item.DepartmentName}");
+
+            #endregion
+
+
+            #endregion
 
         }
     }
