@@ -93,6 +93,46 @@ namespace Demo03
             #endregion
 
 
+            #region 2. Eager Loading
+
+            #region Example 01
+            //                                            Eager Loading
+            //var employee =(from E in dbContext.Employees.Include(E => E.Department)//.ThenInclude(D => D.Project)
+            //             where E.Id ==1
+            //            select E).FirstOrDefault();
+
+            //if (employee is not null)
+            //{
+            ////    // Get Data in Request and Related Data in Another Request
+
+
+
+
+            //   Console.WriteLine($"Employee: Name = {employee.Name}, Department ={employee.Department?.Name ?? "NA"}");
+            //}
+
+            #endregion
+
+
+            #region Example 02
+            //var department =(from D in dbContext.Departments.Include(D => D.Employees)
+            //                 where D.Id == 10
+            //                 select D).FirstOrDefault();
+            //if (department != null)
+            //{
+
+
+            //    Console.WriteLine($"Department: Id = {department.Id}, Name = {department.Name}");
+
+
+            //    foreach(var employee in department.Employees)
+            //        Console.WriteLine($"......Employee: Id = {employee.Id}, Name = {employee.Name}");
+            //} 
+            #endregion
+
+            #endregion
+
+
         }
     }
 }
