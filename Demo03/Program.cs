@@ -387,6 +387,17 @@ namespace Demo03
 
             #endregion
 
+
+            
+            #region View Mapping
+        var Result = dbContext.EmployeeDepartmentsView;
+            foreach (var item in Result)
+                Console.WriteLine($"Employee: {item.EmployeeName}, Department: {item.DepartmentName}");
+
+            #endregion
+
+
+
         }
     }
 }
