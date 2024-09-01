@@ -292,6 +292,77 @@ namespace Demo03
             #endregion
 
 
+
+            #region Left Outer Join
+
+            #region Example01
+            //var Result = dbContext.Departments.GroupJoin(dbContext.Employees,
+            //                                           D => D.Id,
+            //                                           E => E.DepartmentId,
+            //                                           (Department, Employees) => new
+            //                                           {
+            //                                               Department,
+            //                                               Employees = Employees.Count() == 0 ? Employees:(new Employee[1] { null!}).AsEnumerable()
+
+            //                                           }).SelectMany(X => X.Employees,(X,Employee) => new {X.Department,Employee});
+
+
+
+            //Result =from D in dbContext.Departments
+            //        join E in dbContext.Employees
+            //        on D.Id equals E.DepartmentId into Employees
+            //        select new
+            //        {
+            //            Department = D,
+            //            Employees = Employees.DefaultIfEmpty()
+            //        } into X
+            //        from Employee in X.Employees
+            //        select new { X.Department, Employee };
+            //foreach (var Item in Result)
+            //{
+            //    Console.WriteLine($"Department: Id {Item.Department.Id} Name = {Item.Employee.Name ?? "No Employee" }");
+            //}
+
+
+            #endregion
+
+            #region Example 02
+            //var Result = dbContext.Employees.GroupJoin(dbContext.Departments,
+            //    E => E.DepartmentId,
+            //    D => D.Id,
+            //    (Employee, Departments) => new
+            //    {
+            //        Employee,
+            //        Departments = Departments.DefaultIfEmpty()
+            //    }
+            //    ).SelectMany(X => X.Departments,(X,Department) => new {X.Employee,Department});
+
+            //Result = from E in dbContext.Employees
+            //         join D in dbContext.Departments
+            //         on E.DepartmentId equals D.Id into Departments
+            //         select new
+            //         {
+            //             Employee = E,
+            //             Departments = Departments.DefaultIfEmpty()
+            //         } into X
+            //         from Department in X.Departments
+            //         select new
+            //         {
+            //             X.Employee,
+            //             Department,
+            //         };
+
+
+
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"Employee: {item.Employee.Name}, Department: {item.Department?.Name ?? "No Department" }");
+            //} 
+            #endregion
+            #endregion
+
+
             #endregion
 
         }
