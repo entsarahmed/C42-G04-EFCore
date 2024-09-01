@@ -363,6 +363,28 @@ namespace Demo03
             #endregion
 
 
+            #region Cross Join
+
+            //var Result = from E in dbContext.Employees
+            //             from D in dbContext.Departments
+            //             select new
+            //             {
+            //                 Employee = E,
+            //                 Department = D
+            //             };
+            //Result  =dbContext.Employees.SelectMany(E => dbContext.Departments.Select(D => new
+            //{
+            //    Employee = E,
+            //    Department = D
+
+            //}));
+
+            //foreach (var item in Result)
+            //    Console.WriteLine($"Employee: {item.Employee.Name}, Department: {item.Department.Name}");
+
+            #endregion
+
+
             #endregion
 
         }
