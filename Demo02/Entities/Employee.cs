@@ -13,6 +13,7 @@ namespace Demo.Entities
     // EF Cre Support 4 Ways For Mapping Classes(DbContext, Models) to Database(Tables, Views) 
     // 1. By Convension ( Default Behaviour)
     // 2. DataAnnotation (Set of Attributes Will Be used for Validations  )
+    // 3. Fluent APIS ( Set of Methods ) -->  [ DbContext  : Override OnModelCreating( ) ]
 
     /// 1. By Convension 
     /// Poco Class => [ Plain old c# (CLR) Object ] 
@@ -71,7 +72,12 @@ namespace Demo.Entities
 
         public string Address { get; set; }
         [NotMapped]
-        public double NetSalary => Salary * .1;
+        public double NetSalary => Salary-(Salary * .2);
+
+        public double GetNetSalary => Salary- (Salary * .2);
+
+
+
         #endregion
 
 
