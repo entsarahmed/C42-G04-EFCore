@@ -1,5 +1,4 @@
 ﻿using Demo.Entities;
-using Demo01.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -30,9 +29,6 @@ namespace Demo.Context
         =>    optionsBuilder.UseSqlServer("Server = DESKTOP-7IBRQJ0; Database = CompanyG01; Trusted_Connection = True; TrustServerCertificate=Yes;");
 
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Department> Departments { get; set; }
-        public DbSet<Project> Projects { get; set; }
-        public DbSet<Product> Products { get; set; }
 
        
 
