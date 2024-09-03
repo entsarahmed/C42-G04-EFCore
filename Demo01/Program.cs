@@ -8,7 +8,7 @@ namespace Demo01
         {
             using CompanyG01DbContext dbContext = new CompanyG01DbContext();        
 
-
+            var employees =dbContext.Employees.Where(E => E.Age > 20).FirstOrDefault();
 
 
             //CompanyG01DbContext dbContext = new CompanyG01DbContext();
