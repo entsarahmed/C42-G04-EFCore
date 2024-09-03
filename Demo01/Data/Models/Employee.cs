@@ -30,18 +30,18 @@ namespace Demo.Entities
 
     ///1. By Convension(Default Behaviour)
 
-    // internal class Employee
-    //{
-    //    public int Id { get; set; } //Public Numeric  property  "Id" || EntityId => EmployeeId"  --> PK Identity (1, 1)) 
+     internal class Employee
+    {
+      public int Id { get; set; } //Public Numeric  property  "Id" || EntityId => EmployeeId"  --> PK Identity (1, 1)) 
 
-    //    public string? EmpName { get; set; } //ReferenceType : Allow Null [Optional]
+       public string? EmpName { get; set; } //ReferenceType : Allow Null [Optional]
     
-    //    public double Salary { get; set; }  //ValueType : Not Allow Null [Required]
+        public double Salary { get; set; }  //ValueType : Not Allow Null [Required]
    
-    //    public int? Age { get; set; }//Nullable<int>  : Allow Null [Optional]
+       public int? Age { get; set; }//Nullable<int>  : Allow Null [Optional]
 
 
-    //}
+    }
 
 
 
