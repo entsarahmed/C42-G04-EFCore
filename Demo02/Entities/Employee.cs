@@ -14,6 +14,9 @@ namespace Demo.Entities
     // 1. By Convension ( Default Behaviour)
     // 2. DataAnnotation (Set of Attributes Will Be used for Validations  )
     // 3. Fluent APIS ( Set of Methods ) -->  [ DbContext  : Override OnModelCreating( ) ]
+    // 4. ConfigurationClass             --> [ Organize for 3rd Way Fluent API ]  
+
+
 
     /// 1. By Convension 
     /// Poco Class => [ Plain old c# (CLR) Object ] 

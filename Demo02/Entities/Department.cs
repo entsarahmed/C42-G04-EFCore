@@ -17,12 +17,7 @@ namespace Demo.Entities
 
         public DateOnly CreationDate { get; set; }
 
-        [InverseProperty(nameof(Employee.Department))] // We Use InverseProperty Attribute InCase there is more one RelationShip Between Two Classes
-        // Navigational property [Many] 
-        public ICollection<Employee> Employees { get; set; } = new HashSet<Employee>() ;  // Develope Agaist Interface Not Concrete Class 
-
-      
-
+        
 
     }
 
