@@ -1,4 +1,5 @@
 ﻿using Demo.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Demo01
 {
@@ -8,7 +9,7 @@ namespace Demo01
         {
             using CompanyG01DbContext dbContext = new CompanyG01DbContext();        
 
-            var employees =dbContext.Employees.Where(E => E.Age > 20).FirstOrDefault();
+            var employees =dbContext.Employees.Where(E => E.Age > 20).ToList();
 
 
             //CompanyG01DbContext dbContext = new CompanyG01DbContext();
@@ -22,6 +23,9 @@ namespace Demo01
             ////    dbContext.Dispose();
             ////}
 
+
+
+            dbContext.Database.Migrate();
 
 
 
