@@ -5,7 +5,7 @@ namespace Demo04
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async void Main(string[] args)
         {
             using NorthwindContext dbContext = new NorthwindContext();
             #region Execute Raw SQL
@@ -27,6 +27,23 @@ namespace Demo04
             //dbContext.Database.ExecuteSqlRaw($"Update Categories Set  Name = 'New' where CategoryID = {categoryId}");
 
             #endregion
+
+
+            #region Stored Procedure
+
+            //NorthwindContextProcedures northwindContextProcedures = new NorthwindContextProcedures(dbContext);
+
+            ////await  northwindContextProcedures.SalesByCategoryAsync("New", "1998");
+
+
+            //var Result= northwindContextProcedures.SalesByCategoryAsync("New", "1998").Result;
+
+            //foreach (var item in Result)
+            //    Console.WriteLine(item); 
+            #endregion
+
+
+
 
 
         }

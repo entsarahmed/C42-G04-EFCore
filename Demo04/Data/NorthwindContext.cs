@@ -4,7 +4,6 @@ using Demo04.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 #nullable enable
 
 namespace Demo04.Data.Data;
@@ -35,7 +34,8 @@ public partial class NorthwindContext : DbContext
     public virtual DbSet<Supplier> Suppliers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Northwind;Integrated Security=True; TrustServerCertificate = True");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Northwind;Integrated Security=True;Encrypt=True; TrustServerCertificate =True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -44,8 +44,7 @@ public partial class NorthwindContext : DbContext
         modelBuilder.ApplyConfiguration(new Configurations.EmployeeConfiguration());
         modelBuilder.ApplyConfiguration(new Configurations.ProductConfiguration());
         modelBuilder.ApplyConfiguration(new Configurations.ProductsAboveAveragePriceConfiguration());
-       // modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-       
+
         OnModelCreatingPartial(modelBuilder);
     }
 

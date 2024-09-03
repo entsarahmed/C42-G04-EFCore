@@ -10,7 +10,7 @@
    "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "Demo04.Data",
    "Schemas": null,
-   "SelectedHandlebarsLanguage": 2,
+   "SelectedHandlebarsLanguage": 3,
    "SelectedToBeGenerated": 0,
    "T4TemplatePath": null,
    "Tables": [
@@ -41,6 +41,10 @@
       {
          "Name": "[dbo].[Products Above Average Price]",
          "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[SalesByCategory]",
+         "ObjectType": 1
       }
    ],
    "UiHint": null,
