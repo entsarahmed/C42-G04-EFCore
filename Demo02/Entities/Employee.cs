@@ -79,6 +79,9 @@ namespace Demo.Entities
 
         public double GetNetSalary => Salary- (Salary * .2);
 
+        public int? DepartmentId { get; set; } // Foreign Key Column For Departemnt  
+
+        public Department? Department { get; set; } = null!; //Navigation Property 
 
 
         #endregion
