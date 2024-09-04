@@ -23,8 +23,14 @@ namespace Demo.Configurations
                     .HasDefaultValue("Cairo");
 
 
+            builder.HasOne(E => E.Department)
+            .WithMany(D => D.Employees)
+            .HasForeignKey(E => E.DepartmentId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-            
+
+
+
         }
     }
 }

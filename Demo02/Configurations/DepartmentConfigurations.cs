@@ -40,8 +40,19 @@ namespace Demo.Configurations
 
             builder.Property(D => D.CreationDate)
                         .HasComputedColumnSql("GetDate()"); //When Mapping the Value Of the Column Will Take the Date of TableCreation [From Executing GetDate() SQL Method]
-                                                            //.HasDefaultValue(DateOnly.FromDateTime(DateTime.Now));//  static Date , When  Creating Table it take the Date Of [Add Migration ] 
 
+
+            //.HasDefaultValue(DateOnly.FromDateTime(DateTime.Now));//  static Date , When  Creating Table it take the Date Of [Add Migration ] 
+
+
+
+
+
+            builder.HasMany(D => D.Employees)
+               .WithOne(E => E.Department)
+               .HasForeignKey(E => E.DepartmentId)
+               .IsRequired(false)
+               .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

@@ -35,12 +35,44 @@ namespace Demo.Context
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+
+
+            /// modelBuilder.Entity<Department>()
+            ///     .HasMany(D => D.Employees)
+            ///     .WithOne(E => E.Department)
+            ///     .HasForeignKey(E => E.DepartmentId)
+            ///     .OnDelete(DeleteBehavior.Cascade);
+            ///
+            /// modelBuilder.Entity<Employee>()
+            ///     .HasOne(E => E.Department)
+            ///     .WithMany(D => D.Employees)
+            ///     .HasForeignKey(E => E.DepartmentId)
+            ///     .OnDelete(DeleteBehavior.Cascade);
+            ///
+
+            /// We can Make Fluent APIs Method If We Make Only one Navgiational Property 
+            ///modelBuilder.Entity<Student>()
+            ///    .HasMany(S => S.Courses)
+            ///    .WithMany(c => c.Students);
+            ///
+            ///modelBuilder.Entity<Course>()
+            ///    .HasMany(c => c.Students)
+            ///    .WithMany(S => S.Courses);
+
+
+
+
+
+
+
         }
 
 
 
 
-        public DbSet<Employee> Employees { get; set; }// Create table Employees by Using ByConvension Way
+
+
+    public DbSet<Employee> Employees { get; set; }// Create table Employees by Using ByConvension Way
         public DbSet<Department> Departments { get; set; }
 
 
