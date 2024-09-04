@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -79,11 +80,23 @@ namespace Demo.Entities
 
         public double GetNetSalary => Salary- (Salary * .2);
 
+        [ForeignKey(nameof(Employee.Department))]//if we want to Customize on the ForeignKey Property to name it "DepartmentId" InsteadOf byConvension "DepartmentDeptId" We Must Use ForeignKey DataAnnotation and Give it the name of Navigational Property of it's ForeignKey
+
         public int? DepartmentId { get; set; } // Foreign Key Column For Departemnt  
+       
+        [ForeignKey("DepartmentId")] //We Can USe DataAnnotation To Customize on the Name of ForeignKey Column 
+        [InverseProperty(nameof(Entities.Department.Employees))] // ya3ny navigational Property [ Department ] btklm navigational Property [Employees] in table Employee 
+
 
         public Department? Department { get; set; } = null!; //Navigation Property 
 
 
+
+       
+
+        //Navigational Property [ONE]
+        [InverseProperty(nameof(Entities.Department.Manager))]
+        public Department? ManagedDepartment { get; set; } = null!;
         #endregion
 
 
