@@ -39,7 +39,7 @@ namespace Demo.Configurations
             ///.HasAnnotation("", );
 
             builder.Property(D => D.CreationDate)
-                        .HasComputedColumnSql("GetDate()"); //When Mapping the Value Of the Column Will Take the Date of TableCreation [From Executing GetDate() SQL Method]
+                        .HasComputedColumnSql("Cast(GetDate() as Date)"); //When Mapping the Value Of the Column Will Take the Date of TableCreation [From Executing GetDate() SQL Method]
 
 
             //.HasDefaultValue(DateOnly.FromDateTime(DateTime.Now));//  static Date , When  Creating Table it take the Date Of [Add Migration ] 

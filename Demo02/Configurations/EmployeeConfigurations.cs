@@ -29,7 +29,7 @@ namespace Demo.Configurations
             .OnDelete(DeleteBehavior.Cascade);
 
 
-
+            builder.OwnsOne(E => E.DetailsAddress, Address => Address.WithOwner());
 
         }
     }
